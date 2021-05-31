@@ -1,0 +1,22 @@
+.home__background {
+    display: flex;
+    background-color: #f1e3e6;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.home__top {
+    flex-basis: 100%;
+    margin-top: 20vh;
+    background-color: darkcyan;
+}
+
+.home__heading {
+    text-align: center;
+}
+
+.home__content {
+    flex-basis: auto;
+    background-color: rgb(194, 90, 111);
+}

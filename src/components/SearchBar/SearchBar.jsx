@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
+import "./styles.css"
 
 const SearchBar = (props) => {
-    const [data, setData] = useState([]);
+    /* const [data, setData] = useState([]);
     const getData=()=>{
         fetch('data.json'
         ,{
@@ -23,16 +24,12 @@ const SearchBar = (props) => {
       useEffect(()=>{
         getData()
       },[])
-
+ */
 
     return (
-        <div>
-            <input placeholder={props.placeholder}></input>
-            <button>Search</button>
-            <div>
-                {data && data.length>0 && data.map((item)=><p>{item.about}</p>)}
-            </div>
-        </div>
+        <>
+            <input className="search__input" placeholder={props.placeholder}></input>
+        </>
     )
 }
 
