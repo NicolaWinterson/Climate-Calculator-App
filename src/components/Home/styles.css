@@ -13,10 +13,12 @@
 }
 
 .home__heading {
+    padding-top: 2vh;
     text-align: center;
 }
 
 .home__content {
     flex-basis: auto;
+    padding-top: 2vh;
     background-color: rgb(194, 90, 111);
 }
