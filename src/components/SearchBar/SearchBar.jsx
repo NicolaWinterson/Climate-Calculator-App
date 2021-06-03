@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import Checkboxes from "../Checkboxes/Checkboxes"
 import "./styles.css"
 
 const SearchBar = (props) => {
@@ -29,6 +30,7 @@ const SearchBar = (props) => {
     return (
         <>
             <input className="search__input" placeholder={props.placeholder}></input>
+            <Checkboxes />
         </>
     )
 }
