@@ -1,0 +1,19 @@
+.checkbox__container {
+    display: flex;
+    background-color: darkgoldenrod;
+    width: "auto";
+    flex-flow: "row nowrap";
+    border: 10px dotted black;
+    margin: 2vh;
+}
+
+.checkbox__lable {
+    font-size: auto;
+}
+
+.checkbox {
+    height: 20px;
+    width: 20px;
+    border-radius: 15px;
+    margin: 1vh;
+}

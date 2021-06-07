@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Checkbox from "./Checkbox"
+import "./styles.css"
 
 export default function Checkboxes() {
   const [checkedItems, setCheckedItems] = useState({}); //plain object as state
@@ -31,10 +32,9 @@ export default function Checkboxes() {
     }
   ];
 
-
   return (
-    <div>
-      <lable>Is this foodstuff... {checkedItems["check-box-1"]} </lable> <br />
+    <div className="checkbox__container">
+      <lable className="checkbox__lable">Is this foodstuff... {checkedItems["check-box-1"]} </lable> <br />
       {
         checkboxes.map(item => (
           <label key={item.key}>
