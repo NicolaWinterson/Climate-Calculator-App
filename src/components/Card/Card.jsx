@@ -1,9 +1,11 @@
 import React from "react";
 
-const Card = () => {
+const Card = (props) => {
     return (
         <div>
-            <p> I'm a card component!</p>
+            <h1>Title: {props.title}</h1>
+            <img src={props.image} alt="profile" />
+            <p>Name: {props.name}</p>
         </div>
     )
 }

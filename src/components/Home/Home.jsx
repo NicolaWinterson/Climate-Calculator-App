@@ -5,8 +5,9 @@ import Card from "../Card/Card"
 import "./styles.css"
 
 const Home = () => {
-    const [value, setValue] = useState("")
+    const [search, setSearch] = useState("");
     const [data, setData] = useState([]);
+    
     const getData = () => {
         fetch('../db/data.json'
             , {
@@ -26,6 +27,7 @@ const Home = () => {
             }, (error) => {
                 if (error) {
                     console.log("data not found")
+                    console.error(error.message)
                 }
             }
 
@@ -35,14 +37,31 @@ const Home = () => {
         getData()
     }, [])
 
+    const updateSearch = e => {
+        setSearch(e.target.value);
+        console.log(search);
+      };
+
     return (
         <div>
             <Navbar />
             <div className="home__background">
                 <div className="home__top"><h1 className="home__heading">Hej and welcome to HOME</h1></div>
                 <div className="home__content">
-                    <SearchBar placeholder={"Search..."} onChange={(value) => setValue(value)} onSubmit={getData} />
-                    <Card />
+                    <form onSubmit={getData}>
+                        <SearchBar placeholder={"Search..."} onChange={updateSearch}  />
+                    </form>
+                                        
+                    {typeof myJson !== undefined ? (
+                        <Card 
+                        title={data.company}
+                        image={data.image}
+                        name={data.name}
+                        />
+                    ) : (
+                        ""
+                    )}
+            
                 </div>
 
             </div>
