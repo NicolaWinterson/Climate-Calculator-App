@@ -3,7 +3,7 @@ import SearchBar from "../SearchBar/SearchBar.jsx"
 import Navbar from "../Navigation/Navbar"
 import Card from "../Card/Card"
 import "./styles.css"
-import data from "../data/data.json"
+import "../data/data.json"
 
 const Home = () => {
     const [results, setResults] = useState([]);
@@ -22,10 +22,12 @@ const Home = () => {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 });
-                //console.log(response);
+                console.log("response is" + response);
                 const data = await response.json();
-                console.log("response done, let's read the json");
-                setResults(data.hits);
+                var parsedData = JSON.parse(data);
+                console.log("response done, let's read the json" + data)
+                console.log("that data stringified" + parsedData);
+                setResults(data);
             } catch (error) {
                 setError(error);
                 console.log("it is broken");
@@ -97,12 +99,12 @@ const Home = () => {
                 <div className="home__top"><h1 className="home__heading">Hej and welcome to HOME</h1></div>
                 <div className="home__content">
                     <form onSubmit={getSearch}>
-                        <SearchBar placeholder={"Search..."} onChange={updateSearch} />
+                        <SearchBar placeholder={"Search..."} value={search} onChange={updateSearch} />
                     </form>
                     <div>
                    {/*      {typeof myJson !== undefined ? ( */}
                             {
-                                results.map(results => (
+                                results.map(data => (
                                     <Card
                                         key={results._id}
                                         title={results.name}
