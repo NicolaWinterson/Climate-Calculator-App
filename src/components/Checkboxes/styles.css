@@ -1,6 +1,6 @@
 .checkbox__container {
     display: flex;
-    background-color: darkgoldenrod;
+    background-color: rgb(184, 11, 161);
     width: "auto";
     flex-flow: "row nowrap";
     border: 10px dotted black;
